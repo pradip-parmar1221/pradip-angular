@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SharedService } from '../shared.service';
 import { environment } from '../../environments/environment';
+import { string } from '../common/string';
 @Component({
   selector: 'app-child',
   imports: [],
@@ -9,9 +10,10 @@ import { environment } from '../../environments/environment';
 })
 export class ChildComponent {
   constructor(private sharedService: SharedService) {}
-  private apiUrl = environment.apiUrl;
+   apiUrl = environment.apiUrl;
+   login=string.logion
   triggerParentFunction(message:any) {
 
-    this.sharedService.triggerFunction(this.apiUrl); // Pass the data to the first component
+    this.sharedService.triggerFunction(message); // Pass the data to the first component
   }
 }

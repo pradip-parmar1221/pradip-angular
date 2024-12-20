@@ -15,6 +15,7 @@ import { Subscription } from 'rxjs';
 export class AppComponent {
   private subscription: Subscription | null = null; // Initialize with null
   errormessage:any
+  successmessage:any
   title = 'pradip-angular-local';
 
 
@@ -23,11 +24,23 @@ export class AppComponent {
     this.subscription = this.sharedService.triggerFunction$.subscribe((message:any) => {
       this.parentFunction(message);
     });
+    this.subscription = this.sharedService.successFunction$.subscribe((message:any) => {
+      this.successFunction(message);
+    });
   }
   parentFunction(message: any): void {
+    this.successmessage=undefined 
     this.errormessage=message
     setTimeout(() => {
       this.errormessage=undefined 
+    }, 1500);
+
+  }
+  successFunction(message: any): void {
+    this.errormessage=undefined 
+    this.successmessage=message
+    setTimeout(() => {
+      this.successmessage=undefined 
     }, 1500);
 
   }

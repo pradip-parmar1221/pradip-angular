@@ -7,10 +7,24 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<div (sendMessage)="parentFunction($event)" style="height: 50px; width: 200px; background-color: red;" *ngIf="errormessage">
- {{errormessage}}
-</div>
+<!-- <div class="alert alert-danger" role="alert">
 
+
+    <span aria-hidden="true" data-dismiss="alert">&times;</span>
+</div> -->
+
+<div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errormessage">
+    {{errormessage}}
+    <!-- <button type="button" class="close btn" data-dismiss="alert" aria-label="Close">
+      <b> <span aria-hidden="true">&times;</span></b>  
+    </button> -->
+</div>
+<div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="successmessage">
+    {{successmessage}}
+    <!-- <button type="button" class="close btn" data-dismiss="alert" aria-label="Close">
+      <b> <span aria-hidden="true">&times;</span></b>  
+    </button> -->
+</div>
 
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

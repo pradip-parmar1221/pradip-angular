@@ -16,4 +16,8 @@ export class ChildComponent {
 
     this.sharedService.triggerFunction(message); // Pass the data to the first component
   }
+  successsParentFunction(message:any) {
+
+    this.sharedService.successFunction(message); // Pass the data to the first component
+  }
 }
